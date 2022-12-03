@@ -37,17 +37,11 @@ var losses = map[string]string{
 }
 
 func win(game []string) bool {
-	if game[1] == wins[game[0]] {
-		return true
-	}
-	return false
+	return game[1] == wins[game[0]]
 }
 
 func tie(game []string) bool {
-	if game[1] == equals[game[0]] {
-		return true
-	}
-	return false
+	return game[1] == equals[game[0]]
 }
 
 func main() {
