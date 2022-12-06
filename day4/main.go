@@ -1,20 +1,15 @@
 package main
 
 import (
+	"aoc2022/common"
 	"fmt"
 	"os"
-	"strconv"
 	"strings"
 )
 
-func toInt(str string) int {
-	num, _ := strconv.Atoi(str)
-	return num
-}
-
 func pairToInt(pair string) []int {
 	areas := strings.Split(pair, "-")
-	slice := []int{toInt(areas[0]), toInt(areas[1])}
+	slice := []int{common.ToInt(areas[0]), common.ToInt(areas[1])}
 	return slice
 }
 
