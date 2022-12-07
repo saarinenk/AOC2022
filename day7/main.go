@@ -9,10 +9,6 @@ import (
 
 var sizemap = map[string]int{}
 
-func getSize(lines []string, index int) int {
-	return 0
-}
-
 func buildMap(lines []string) {
 	path := ""
 	for i, l := range lines {
