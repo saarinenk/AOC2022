@@ -50,12 +50,12 @@ func moveKnot(coord1 coordinate, coord2 coordinate) coordinate {
 	coord := coordinate{coord2.lat, coord2.lng}
 	if coord1.lat > coord2.lat {
 		coord = coordinate{coord2.lat + 1, coord.lng}
-	} else if coord1.lat != coord2.lat {
+	} else if coord1.lat < coord2.lat {
 		coord = coordinate{coord2.lat - 1, coord.lng}
 	}
 	if coord1.lng > coord2.lng {
 		coord = coordinate{coord.lat, coord2.lng + 1}
-	} else if coord1.lng != coord.lng {
+	} else if coord1.lng < coord.lng {
 		coord = coordinate{coord.lat, coord2.lng - 1}
 	}
 	return coord
