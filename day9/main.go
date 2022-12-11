@@ -13,11 +13,6 @@ type coordinate struct {
 	lng int
 }
 
-func splitCommand(comm string) (string, int) {
-	split := strings.Split(comm, " ")
-	return split[0], common.ToInt(split[1])
-}
-
 func tooFar(coord1 coordinate, coord2 coordinate) bool {
 	distLng := math.Abs(float64(coord1.lng) - float64(coord2.lng))
 	distLat := math.Abs(float64(coord1.lat) - float64(coord2.lat))
@@ -91,7 +86,7 @@ func makePath(commands []string, knots int) int {
 	visited[rope[knots-1]] = true
 
 	for _, comm := range commands {
-		dir, steps := splitCommand(comm)
+		dir, steps := common.SplitCommand(comm)
 		for i := 0; i < steps; i++ {
 			rope[0] = moveH(rope[0], dir)
 

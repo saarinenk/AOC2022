@@ -1,6 +1,9 @@
 package common
 
-import "strconv"
+import (
+	"strconv"
+	"strings"
+)
 
 func ToInt(str string) int {
 	num, _ := strconv.Atoi(str)
@@ -33,4 +36,17 @@ func Reverse(s []int) []int {
 	}
 
 	return output
+}
+
+func SplitCommand(comm string) (string, int) {
+	split := strings.Split(comm, " ")
+	return split[0], ToInt(split[1])
+}
+
+func SliceSum(slice []int) int {
+	sum := 0
+	for _, num := range slice {
+		sum += num
+	}
+	return sum
 }
