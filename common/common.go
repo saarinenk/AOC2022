@@ -50,3 +50,5 @@ func SliceSum(slice []int) int {
 	}
 	return sum
 }
+
+var Alphabet = "abcdefghijklmnopqrstuvwxyz"
